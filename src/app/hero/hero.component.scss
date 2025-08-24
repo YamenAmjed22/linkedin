@@ -279,7 +279,8 @@ $background-color: #0f172a; // Deep Navy
     .tech-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.5rem; 
+      margin-top: 1rem;
 
       span {
         background: rgba($primary-color, 0.1);
@@ -351,4 +352,11 @@ $background-color: #0f172a; // Deep Navy
   to {
     width: var(--width);
   }
+}
+
+
+.link{
+  color: #9067ffc0; 
+  font-weight: 600;
+    
 }
