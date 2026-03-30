@@ -1,0 +1,208 @@
+.contact-wrapper {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 3rem;
+
+    h3 {
+        font-size: 2rem;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 240, 255, 0.1);
+        color: var(--accent-cyan);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+    }
+
+    .text {
+        span {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        a,
+        p {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--accent-cyan);
+            }
+        }
+    }
+}
+
+.contact-form {
+    flex: 1.5;
+    padding: 3rem;
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+.input-group {
+    position: relative;
+    width: calc(50% - 1rem);
+
+    &.full-width {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s ease;
+
+        &:focus,
+        &:valid {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        &:focus+label,
+        &:valid+label {
+            top: -12px;
+            left: 15px;
+            font-size: 0.8rem;
+            padding: 0 5px;
+            background: var(--bg-color);
+            color: var(--accent-cyan);
+        }
+
+        &.invalid {
+            border-color: #ff3366;
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        color: var(--text-secondary);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+
+    &:disabled {
+        background: rgba(255, 255, 255, 0.1);
+        cursor: not-allowed;
+        box-shadow: none;
+        color: var(--text-secondary);
+    }
+}
+
+.loader {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.alert {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+
+    &.success-alert {
+        background: rgba(0, 255, 136, 0.1);
+        color: #00ff88;
+        border: 1px solid rgba(0, 255, 136, 0.2);
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 2rem;
+    }
+}

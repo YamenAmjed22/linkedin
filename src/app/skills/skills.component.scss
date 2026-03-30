@@ -1,0 +1,147 @@
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.skills-category {
+    padding: 2.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        color: var(--text-primary);
+        position: relative;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+    }
+
+    &:hover .category-title::after {
+        width: 100%;
+    }
+
+    /* Different category color accents */
+    &:nth-child(1) .category-title::after {
+        background: var(--accent-cyan);
+    }
+
+    &:nth-child(2) .category-title::after {
+        background: var(--accent-blue);
+    }
+
+    &:nth-child(3) .category-title::after {
+        background: var(--accent-purple);
+    }
+}
+
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    .skill-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+    }
+
+    .skill-name {
+        letter-spacing: 0.5px;
+    }
+
+    .skill-percentage {
+        font-family: 'Fira Code', monospace;
+    }
+
+    .progress-bar-bg {
+        width: 100%;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        border-radius: 4px;
+        position: relative;
+        width: 0;
+        /* Animated entry */
+        animation: fillBar 1.5s cubic-bezier(0.1, 0.5, 0.5, 1) forwards;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        &.color-cyan {
+            background: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        &.color-blue {
+            background: var(--accent-blue);
+            box-shadow: 0 0 10px rgba(0, 94, 255, 0.5);
+        }
+
+        &.color-purple {
+            background: var(--accent-purple);
+            box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+    }
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-category {
+        padding: 1.5rem;
+    }
+}
