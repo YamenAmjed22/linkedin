@@ -40,15 +40,15 @@
     z-index: 1;
 
     &:hover {
-        transform: translateY(-10px) scale(1.02);
-        border-color: var(--accent-cyan);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--neon-glow);
+        transform: translateY(-8px) scale(1.01);
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 
         .card-icon {
             transform: scale(1.1) rotate(5deg);
-            background: var(--accent-cyan);
-            color: var(--bg-color);
-            box-shadow: 0 0 20px var(--accent-cyan);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .card-footer .arrow {

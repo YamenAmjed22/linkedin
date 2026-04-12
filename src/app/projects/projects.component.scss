@@ -14,9 +14,9 @@
     flex-direction: column;
 
     &:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--neon-glow);
-        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+        border-color: rgba(255, 255, 255, 0.1);
 
         .project-image {
             transform: scale(1.05);
@@ -72,10 +72,10 @@
     transition: all 0.3s ease;
 
     &:hover {
-        background: var(--accent-cyan);
+        background: #fff;
         color: var(--bg-color);
-        box-shadow: var(--neon-glow);
-        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
     }
 }
 
@@ -118,8 +118,9 @@
     transition: all 0.3s ease;
 
     &:hover {
-        border-color: var(--accent-cyan);
-        color: var(--accent-cyan);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.08);
     }
 }
 

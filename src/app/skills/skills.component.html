@@ -1,22 +1,18 @@
-<section class="section skills">
-    <h2 class="section-title animate-on-scroll">Professional <span>Skills</span></h2>
+<div class="skills-container">
+    <div class="skills-category glass-panel" *ngFor="let category of skillCategories">
+        <h3 class="category-title">{{ category.name }}</h3>
 
-    <div class="skills-container animate-on-scroll">
-        <div class="skills-category glass-panel" *ngFor="let category of skillCategories">
-            <h3 class="category-title">{{ category.name }}</h3>
-
-            <div class="skills-grid">
-                <div class="skill-item" *ngFor="let skill of category.skills">
-                    <div class="skill-info">
-                        <span class="skill-name">{{ skill.name }}</span>
-                        <span class="skill-percentage">{{ skill.level }}%</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar" [ngStyle]="{'width': skill.level + '%'}"
-                            [class]="category.colorClass"></div>
+        <div class="skills-grid">
+            <div class="skill-item" *ngFor="let skill of category.skills">
+                <div class="skill-info">
+                    <span class="skill-name">{{ skill.name }}</span>
+                    <span class="skill-percentage">{{ skill.level }}%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar" [ngStyle]="{'width': skill.level + '%'}" [class]="category.colorClass">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>

@@ -1,21 +1,29 @@
-<nav class="navbar" [class.scrolled]="isScrolled">
-    <div class="logo">
-        <a href="#hero">
-            <span class="bracket">&lt;</span>
-            <span class="name">Dev</span>
-            <span class="bracket">/&gt;</span>
-        </a>
-    </div>
+<nav class="navbar" [class.scrolled]="isScrolled" [class.hidden]="isHidden">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="#hero">
+                <span class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </span>
+                <span class="name">Y_Amjed<span class="dot">.</span></span>
+            </a>
+        </div>
 
-    <div class="menu-btn" (click)="toggleMenu()" [class.open]="isMenuOpen">
-        <div class="burger"></div>
-    </div>
+        <ul class="nav-links" [class.open]="isMenuOpen">
+            <li><a href="#about" (click)="closeMenu()"><span class="nav-tag">01//</span>About</a></li>
+            <li><a href="#skills" (click)="closeMenu()"><span class="nav-tag">02//</span>Skills</a></li>
+            <li><a href="#projects" (click)="closeMenu()"><span class="nav-tag">03//</span>Projects</a></li>
+            <li><a href="#experience" (click)="closeMenu()"><span class="nav-tag">04//</span>Experience</a></li>
+        </ul>
 
-    <ul class="nav-links" [class.open]="isMenuOpen">
-        <li><a href="#about" (click)="closeMenu()">About</a></li>
-        <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
-        <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
-        <li><a href="#experience" (click)="closeMenu()">Experience</a></li>
-        <li><a href="#contact" class="btn btn-outline" (click)="closeMenu()">Contact</a></li>
-    </ul>
+        <div class="nav-actions">
+            <a href="#contact" class="btn-connect" (click)="closeMenu()">Say Hello</a>
+            <div class="menu-btn" (click)="toggleMenu()" [class.open]="isMenuOpen">
+                <div class="burger"></div>
+            </div>
+        </div>
+    </div>
 </nav>
