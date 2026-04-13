@@ -35,15 +35,16 @@
   }
 
   .name {
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-weight: 800;
     line-height: 1.1;
-    margin-bottom: 1rem;
-    letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.05em;
+    background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));
   }
 
   .title {
@@ -119,49 +120,102 @@
   .java-terminal {
     width: 100%;
     max-width: 500px;
-    background: rgba(9, 9, 11, 0.85);
-    /* Zinc 900 base */
-    backdrop-filter: blur(20px);
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(32px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    /* subtle inner stroke */
     border-radius: 12px;
-    box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.05) inset;
+    box-shadow:
+      0 30px 60px -12px rgba(0, 0, 0, 0.6),
+      0 0 1px 1px rgba(255, 255, 255, 0.05) inset,
+      0 1px 0 rgba(255, 255, 255, 0.1) inset;
     overflow: hidden;
-    animation: float 6s ease-in-out infinite;
+    animation: float 10s ease-in-out infinite;
     transform-style: preserve-3d;
+    position: relative;
 
     .terminal-header {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0 1rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      border-bottom: 1px solid var(--glass-border);
+      gap: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      height: 45px;
 
-      .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
+      .header-dots {
+        display: flex;
+        gap: 6px;
+        min-width: 50px;
 
-        &.red {
-          background: #ff5f56;
-        }
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
 
-        &.yellow {
-          background: #ffbd2e;
-        }
+          &.red {
+            background: #ff5f56;
+          }
 
-        &.green {
-          background: #27c93f;
+          &.yellow {
+            background: #ffbd2e;
+          }
+
+          &.green {
+            background: #27c93f;
+          }
         }
       }
 
-      .file-name {
-        margin-left: 1rem;
-        font-size: 0.85rem;
-        color: var(--text-secondary);
-        font-family: 'Fira Code', monospace;
-        letter-spacing: 1px;
+      .terminal-tabs {
+        display: flex;
+        height: 100%;
+        gap: 2px;
+
+        .tab {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 0 16px;
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          border-right: 1px solid rgba(255, 255, 255, 0.03);
+          cursor: default;
+          background: rgba(255, 255, 255, 0.015);
+          position: relative;
+
+          &.active {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: var(--accent-cyan);
+            }
+          }
+
+          .tab-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+
+            &.java {
+              background: #e76f51;
+            }
+
+            &.sql {
+              background: #118ab2;
+            }
+
+            &.ts {
+              background: #3178c6;
+            }
+          }
+        }
       }
     }
 

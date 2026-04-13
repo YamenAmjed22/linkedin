@@ -57,7 +57,7 @@ export class ProjectsComponent {
       technologies: ['Java Spring Boot', 'Spring Security', 'JWT'],
       gradient: 'linear-gradient(135deg, #F5AF19 0%, #F12711 100%)',
       githubLink: 'https://github.com/YamenAmjed22/spring-security-template',
-      liveLink: 'https://github.com/YamenAmjed22/spring-security-template'
+      liveLink: 'https://github.com/YamenAmjed22/SpringBootSecurity'
     }
   ];
 }

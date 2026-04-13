@@ -56,10 +56,25 @@
         <!-- Floating Terminal -->
         <div class="java-terminal glass-panel">
             <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="file-name">WalletController.java</span>
+                <div class="header-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-tabs">
+                    <div class="tab active">
+                        <span class="tab-icon java"></span>
+                        <span class="file-name">WalletController.java</span>
+                    </div>
+                    <div class="tab">
+                        <span class="tab-icon sql"></span>
+                        <span class="file-name">schema.sql</span>
+                    </div>
+                    <div class="tab">
+                        <span class="tab-icon ts"></span>
+                        <span class="file-name">api.ts</span>
+                    </div>
+                </div>
             </div>
             <div class="terminal-body">
                 <div class="boot-logs" *ngIf="visibleLogs.length < terminalLogs.length">

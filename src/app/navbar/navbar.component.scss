@@ -8,11 +8,12 @@
     z-index: 1000;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: rgba(10, 10, 15, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 100px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.5);
+    padding: 2px;
 
     &.scrolled {
         top: 1rem;
@@ -80,12 +81,11 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #a1a1aa;
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            padding: 8px 4px;
 
             .nav-tag {
                 font-family: 'Fira Code', monospace;
@@ -113,14 +113,16 @@
                 left: 50%;
                 transform: translateX(-50%);
                 width: 0;
-                height: 2px;
-                background: #38bdf8;
-                transition: width 0.3s ease;
+                height: 1px;
+                background: var(--accent-cyan);
+                transition: all 0.3s ease;
                 border-radius: 2px;
+                opacity: 0;
             }
 
             &:hover::after {
                 width: 100%;
+                opacity: 1;
             }
         }
     }

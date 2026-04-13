@@ -38,6 +38,16 @@ export class AppComponent implements OnInit {
     this.checkScrollVisibility();
   }
 
+  @HostListener('window:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent) {
+    const aurora = document.getElementById('aurora');
+    if (aurora) {
+      const x = e.clientX;
+      const y = e.clientY;
+      aurora.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  }
+
   checkScrollVisibility() {
     const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach((el) => {

@@ -82,20 +82,36 @@
 
     .progress-bar-bg {
         width: 100%;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 2px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
         overflow: hidden;
-        margin-top: 4px;
+        margin-top: 8px;
+        position: relative;
     }
 
     .progress-bar {
         height: 100%;
-        border-radius: 2px;
+        border-radius: 10px;
         position: relative;
         width: 0;
-        /* Animated entry */
         animation: fillBar 1.5s cubic-bezier(0.1, 0.5, 0.5, 1) forwards;
+        background: var(--text-primary);
+
+        &.color-cyan {
+            background: linear-gradient(90deg, #06b6d4, #22d3ee);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+        }
+
+        &.color-blue {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+
+        &.color-purple {
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        }
 
         &::after {
             content: '';
@@ -104,23 +120,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        &.color-cyan {
-            background: #fff;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-        }
-
-        &.color-blue {
-            background: #e2e2e2;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-        }
-
-        &.color-purple {
-            background: #a1a1aa;
-            box-shadow: 0 0 8px rgba(161, 161, 170, 0.3);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 3s infinite;
         }
     }
 }
